@@ -26,7 +26,7 @@ create table Notification(
     employee_ID int,
     meeting_ID int,
     test_ID int, 
-    notification_date int,
+    notification_date DATE,
     notification_type VARCHAR(255),    
     foreign key (employee_ID) references Employee(employee_ID),
     foreign key (meeting_ID) references Meeting(meeting_ID)
@@ -127,15 +127,16 @@ INSERT INTO Meeting (meeting_ID, employee_ID, room_number, floor_number, meeting
 VALUES (5, 5, 301, 3, 12);
 
 
+
 -- Insert values into the Notification table
 INSERT INTO Notification (notification_ID, employee_ID, meeting_ID, test_ID, notification_date, notification_type)
-VALUES (1, 1, 1, NULL, 20231008, 'Meeting Reminder');
+VALUES (1, 1, 1, NULL, TO_DATE('2023-10-08', 'YYYY-MM-DD'), 'Meeting Reminder');
 
 INSERT INTO Notification (notification_ID, employee_ID, meeting_ID, test_ID, notification_date, notification_type)
-VALUES (2, 2, 2, NULL, 20231009, 'Test Notification');
+VALUES (2, 2, 2, NULL, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 'Covid Test Notification');
 
 INSERT INTO Notification (notification_ID, employee_ID, meeting_ID, test_ID, notification_date, notification_type)
-VALUES (3, 3, 3, NULL, 20231010, 'Meeting Cancellation');
+VALUES (3, 3, 3, NULL, TO_DATE('2023-10-10', 'YYYY-MM-DD'), 'Meeting Cancellation');
 
 
 -- Insert values into the Symptom table
@@ -151,13 +152,13 @@ VALUES (3, 3, TO_DATE('2023-10-10', 'YYYY-MM-DD'));
 
 -- Insert values into the Scan table 
 INSERT INTO Scan (scan_ID, employee_ID, scan_date, scan_time, temperature)
-VALUES (1, 1, TO_DATE('2023-10-08', 'YYYY-MM-DD'), 1000, 98);
+VALUES (1, 1, TO_DATE('2023-10-08', 'YYYY-MM-DD'), 10, 98);
 
 INSERT INTO Scan (scan_ID, employee_ID, scan_date, scan_time, temperature)
-VALUES (2, 2, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 1030, 99);
+VALUES (2, 2, TO_DATE('2023-10-09', 'YYYY-MM-DD'), 11, 99);
 
 INSERT INTO Scan (scan_ID, employee_ID, scan_date, scan_time, temperature)
-VALUES (3, 3, TO_DATE('2023-10-10', 'YYYY-MM-DD'), 1100, 97);
+VALUES (3, 3, TO_DATE('2023-10-10', 'YYYY-MM-DD'), 12, 97);
 
 
 -- Insert values into the Test table

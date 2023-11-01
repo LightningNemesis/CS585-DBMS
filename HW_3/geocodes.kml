@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Doheny</name>
+    <description>Founded in 1880, this private research school is known for journalism, 
+    cinematic arts & medicine.</description>
+    <Point>
+      <coordinates>-xyz,xyz,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Leavey</name>
+    <description>Founded in 1880, this private research school is known for journalism, 
+    cinematic arts & medicine.</description>
+    <Point>
+      <coordinates>-xyz,xyz,0</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Dornsife</name>
+    <description>Founded in 1880, this private research school is known for journalism, 
+    cinematic arts & medicine.</description>
+    <Point>
+      <coordinates>-xyz,xyz,0</coordinates>
+    </Point>
+  </Placemark>
+</kml>

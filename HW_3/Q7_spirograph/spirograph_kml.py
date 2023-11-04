@@ -1,20 +1,17 @@
 import math
 
-
-
 def spirograph_generation(points):
-  # Declare variables as given by sir
+  # Given variables, values treated as constants
     R = 36.0
     r = 9.0
     a = 30.0
 
-  # Points for Tommy Trojan
+  # Tommy Trojan coordinates
     cx = -118.28543170888742
     cy = 34.02049236057662
     nRev = 16.0
     t = 0.1
 
-    # Looping through
     while t < math.pi*nRev:
         x = (R+r)*math.cos((r/R)*t)-a*math.cos((1+r/R)*t)
         y = (R+r)*math.sin((r/R)*t)-a*math.sin((1+r/R)*t)

@@ -1,27 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kml xmlns="http://www.opengis.net/kml/2.2">
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+
+<Placemark>
+  <name>Home to Neighbor 1</name>
+  <LineString>
+    <coordinates>
+      -118.29257926863903,34.0330895700459
+      -118.28527978471891,34.02531244827672      
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Home to Neighbor 2</name>
+  <LineString>
+    <coordinates>
+      -118.29257926863903,34.0330895700459
+      -118.2853449856225,34.024978796299656      
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Home to Neighbor 3</name>
+  <LineString>
+    <coordinates>
+      -118.29257926863903,34.0330895700459
+      -118.2862795135621,34.02388234738049      
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+  <name>Home to Neighbor 4</name>
+  <LineString>
+    <coordinates>
+      -118.29257926863903,34.0330895700459
+      -118.2864475558864,34.02344481782012
+    </coordinates>
+  </LineString>
+</Placemark>
+
+<Placemark>
+    <name>Home</name>
+    <description>1421 West Adams.</description>
+    <Point>
+      <coordinates>-118.29257926863903,34.0330895700459</coordinates>
+    </Point>
+  </Placemark>
+
   <Placemark>
     <name>Doheny</name>
-    <description>Founded in 1880, this private research school is known for journalism, 
-    cinematic arts & medicine.</description>
+    <description>Library 1</description>
     <Point>
-      <coordinates>-xyz,xyz,0</coordinates>
+      <coordinates>-118.283693,34.020007</coordinates>
     </Point>
   </Placemark>
   <Placemark>
     <name>Leavey</name>
-    <description>Founded in 1880, this private research school is known for journalism, 
-    cinematic arts & medicine.</description>
+    <description>Library 2</description>
     <Point>
-      <coordinates>-xyz,xyz,0</coordinates>
+      <coordinates>-118.283693,34.020007</coordinates>
     </Point>
   </Placemark>
   <Placemark>
-    <name>Dornsife</name>
-    <description>Founded in 1880, this private research school is known for journalism, 
-    cinematic arts & medicine.</description>
+    <name>Science and Engineering</name>
+    <description>Library 3</description>
     <Point>
-      <coordinates>-xyz,xyz,0</coordinates>
+      <coordinates>-118.28888523078832,34.01945123387719</coordinates>
     </Point>
   </Placemark>
+
+  <Placemark>
+    <name>Cinematic Arts</name>
+    <description>Department 1</description>
+    <Point>
+      <coordinates>-118.2864475558864,34.02344481782012</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Marshall</name>
+    <description>Department 2</description>
+    <Point>
+      <coordinates>-118.28592023260921,34.01885748526797</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Herman Ostro School of Dentistry</name>
+    <description>Department 3</description>
+    <Point>
+      <coordinates>-118.28627951356212,34.02388234738049</coordinates>
+    </Point>
+  </Placemark>
+
+  <Placemark>
+    <name>Dulce</name>
+    <description>Restaurant 1</description>
+    <Point>
+      <coordinates>-118.28527978471891,34.02531244827672</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Starbucks</name>
+    <description>Restaurant 2</description>
+    <Point>
+      <coordinates>-118.28408450005811,34.02473497987479</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Insomnia Cookies</name>
+    <description>Restaurant 3</description>
+    <Point>
+      <coordinates>-118.2853449856225,34.024978796299656</coordinates>
+    </Point>
+  </Placemark>
+
+  <Placemark>
+    <name>Traveller the horse</name>
+    <description>fountains 1</description>
+    <Point>
+      <coordinates>-118.28526109870987,34.02024573113718</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Generations Fountain (exiting leavey)</name>
+    <description>fountains 2</description>
+    <Point>
+      <coordinates>-118.283238,34.022211</coordinates>
+    </Point>
+  </Placemark>
+  <Placemark>
+    <name>Doheny fountain</name>
+    <description>fountains 3</description>
+    <Point>
+      <coordinates>-118.28341902447363,34.020447068158866</coordinates>
+    </Point>
+  </Placemark>
+
+  <Placemark>
+      <name>Convex Hull Area</name>
+ <Polygon>
+  <outerBoundaryIs>
+    <LinearRing>
+      <coordinates>
+        -118.285920233,34.018857485
+        -118.288885231,34.019451234
+        -118.292579269,34.03308957
+        -118.2840845,34.02473498
+        -118.283238,34.022211
+        -118.283419024,34.020447068
+        -118.283693,34.020007
+        -118.285920233,34.018857485
+      </coordinates>
+    </LinearRing>
+  </outerBoundaryIs>
+</Polygon>
+</Placemark>
+
+
+</Document>
 </kml>

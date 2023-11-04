@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OpenLayers Map Visualization</title>
+    <link rel="stylesheet" href="https://openlayers.org/en/v6.13.0/css/ol.css" type="text/css">
+    <script src="https://openlayers.org/en/v6.13.0/build/ol.js"></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>OpenLayers Map Visualization</h2>
+    <div id="map" class="map"></div>
+
+    <script>
+        var lat_long = {
+            "1421_west_adams": {
+                "coordinates": [
+                    -118.29257926863903,
+                    34.0330895700459
+
+                ]
+            },
+            "doheny_library": {
+                "coordinates": [
+                    -118.283693,
+                    34.020007]
+            },
+
+            "Leavey_library": {
+                "coordinates": [
+                    -118.283258,
+                    34.021605
+                ]
+            },
+            "Science_and_Engineering": {
+                "coordinates": [
+                    -118.28888523078832,
+                    34.01945123387719
+                ]
+            },
+
+
+            "Cinematic_arts_dpt": {
+                "coordinates": [
+                    -118.2864475558864,
+                    34.02344481782012
+
+                ]
+            },
+            "Marshall_dpt": {
+                "coordinates": [
+                    -118.28592023260921,
+                    34.01885748526797
+
+                ]
+            },
+            "Herman_Ostro_School_of_Dentistry_dept": {
+                "coordinates": [
+                    -118.28627951356212,
+                    34.02388234738049
+
+                ]
+            },
+
+            "Dulce": {
+                "coordinates": [
+                    -118.28527978471891,
+                    34.02531244827672
+
+                ]
+            },
+            "Starbucks": {
+                "coordinates": [
+                    -118.28408450005811,
+                    34.02473497987479]
+            },
+            "Insomnia_cookies": {
+                "coordinates": [
+                    -118.2853449856225,
+                    34.024978796299656
+
+                ]
+            },
+
+            "Traveller_the_horse": {
+                "coordinates": [
+                    -118.28526109870987,
+                    34.02024573113718
+
+                ]
+            },
+            "Generations_Fountain": {
+                "coordinates": [
+                    -118.283238,
+                    34.022211
+
+                ]
+            },
+            "Doheny_fountain": {
+                "coordinates": [
+                    -118.28341902447363,
+                    34.020447068158866
+
+                ]
+            }
+
+        }
+
+        // Save points to local storage
+        localStorage.setItem("lat_long", JSON.stringify(lat_long));
+
+        // Load points from local storage
+        var loadedPoints = JSON.parse(localStorage.getItem("lat_long"));
+
+        var iconStyle = new ol.style.Style({
+            image: new ol.style.Icon({
+                anchor: [0.5, 46],
+                anchorXUnits: 'fraction',
+                anchorYUnits: 'pixels',
+                scale:0.04,
+                src: './marker.png'          
+            })
+            
+        });
+        
+
+        var map = new ol.Map({
+            target: 'map',
+            layers: [
+                new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                })
+            ],
+            view: new ol.View({
+                center: ol.proj.fromLonLat(loadedPoints["Dulce"]["coordinates"]),
+                zoom: 14.5
+            })
+        });
+
+        // Sample points to visualize
+        var mapPoints = [];
+        for (var key in loadedPoints) {
+            mapPoints.push({
+                name: key,
+                coordinates: ol.proj.fromLonLat(loadedPoints[key]["coordinates"])
+            });
+        }
+
+        // Add points to the map
+        mapPoints.forEach(function (point) {
+            var marker = new ol.Feature({
+                geometry: new ol.geom.Point(point.coordinates)
+            });
+            marker.setStyle(iconStyle);
+
+            var vectorSource = new ol.source.Vector({
+                features: [marker]
+            });
+
+            var vectorLayer = new ol.layer.Vector({
+                source: vectorSource
+            });
+
+            map.addLayer(vectorLayer);
+        });
+    </script>
+</body>
+
+</html>

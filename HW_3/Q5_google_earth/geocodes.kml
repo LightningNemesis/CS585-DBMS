@@ -1,6 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.1">
   <Document>
+    <!-- Home -->
+    <Placemark>
+      <name>Home</name>
+      <description>1421 West Adams.</description>
+      <Point>
+        <coordinates>-118.29257926863903,34.0330895700459</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- Libraries -->
+    <Folder>
+      <name>libraries</name>
+      <Placemark>
+        <name>Doheny</name>
+        <description>Library 1</description>
+        <Point>
+          <coordinates>-118.283693,34.020007</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Leavey</name>
+        <description>Library 2</description>
+        <Point>
+          <coordinates>-118.283693,34.020007</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Science and Engineering</name>
+        <description>Library 3</description>
+        <Point>
+          <coordinates>-118.28888523078832,34.01945123387719</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- Departments -->
+    <Folder>
+      <name>department buildings</name>
+
+      <Placemark>
+        <name>Cinematic Arts</name>
+        <description>Department 1</description>
+        <Point>
+          <coordinates>-118.2864475558864,34.02344481782012</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Marshall</name>
+        <description>Department 2</description>
+        <Point>
+          <coordinates>-118.28592023260921,34.01885748526797</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Herman Ostro School of Dentistry</name>
+        <description>Department 3</description>
+        <Point>
+          <coordinates>-118.28627951356212,34.02388234738049</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- Restaurants -->
+    <Folder>
+      <name>eateries</name>
+      <Placemark>
+        <name>Dulce</name>
+        <description>Restaurant 1</description>
+        <Point>
+          <coordinates>-118.28527978471891,34.02531244827672</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Starbucks</name>
+        <description>Restaurant 2</description>
+        <Point>
+          <coordinates>-118.28408450005811,34.02473497987479</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Insomnia Cookies</name>
+        <description>Restaurant 3</description>
+        <Point>
+          <coordinates>-118.2853449856225,34.024978796299656</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- Fountains -->
+    <Folder>
+      <name>waterworks</name>
+      <Placemark>
+        <name>Traveller the horse</name>
+        <description>fountains 1</description>
+        <Point>
+          <coordinates>-118.28526109870987,34.02024573113718</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Generations Fountain (exiting leavey)</name>
+        <description>fountains 2</description>
+        <Point>
+          <coordinates>-118.283238,34.022211</coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Doheny fountain</name>
+        <description>fountains 3</description>
+        <Point>
+          <coordinates>-118.28341902447363,34.020447068158866</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+
+    <!-- Convex Hull  -->
+    <Placemark>
+      <name>Convex Hull Area</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -118.285920233,34.018857485
+              -118.288885231,34.019451234
+              -118.292579269,34.03308957
+              -118.2840845,34.02473498
+              -118.283238,34.022211
+              -118.283419024,34.020447068
+              -118.283693,34.020007
+              -118.285920233,34.018857485
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
 
     <!-- 4 nearest neighbours -->
     <Placemark>
@@ -33,7 +167,6 @@
       </LineString>
     </Placemark>
 
-
     <Placemark>
       <name>Home to Neighbor 4</name>
       <LineString>
@@ -43,129 +176,6 @@
         </coordinates>
       </LineString>
     </Placemark>
-
-    <!-- Home -->
-    <Placemark>
-      <name>Home</name>
-      <description>1421 West Adams.</description>
-      <Point>
-        <coordinates>-118.29257926863903,34.0330895700459</coordinates>
-      </Point>
-    </Placemark>
-
-    <!-- Libraries -->
-    <Placemark>
-      <name>Doheny</name>
-      <description>Library 1</description>
-      <Point>
-        <coordinates>-118.283693,34.020007</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Leavey</name>
-      <description>Library 2</description>
-      <Point>
-        <coordinates>-118.283693,34.020007</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Science and Engineering</name>
-      <description>Library 3</description>
-      <Point>
-        <coordinates>-118.28888523078832,34.01945123387719</coordinates>
-      </Point>
-    </Placemark>
-
-    <!-- Departments -->
-    <Placemark>
-      <name>Cinematic Arts</name>
-      <description>Department 1</description>
-      <Point>
-        <coordinates>-118.2864475558864,34.02344481782012</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Marshall</name>
-      <description>Department 2</description>
-      <Point>
-        <coordinates>-118.28592023260921,34.01885748526797</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Herman Ostro School of Dentistry</name>
-      <description>Department 3</description>
-      <Point>
-        <coordinates>-118.28627951356212,34.02388234738049</coordinates>
-      </Point>
-    </Placemark>
-
-    <!-- Restaurants -->
-    <Placemark>
-      <name>Dulce</name>
-      <description>Restaurant 1</description>
-      <Point>
-        <coordinates>-118.28527978471891,34.02531244827672</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Starbucks</name>
-      <description>Restaurant 2</description>
-      <Point>
-        <coordinates>-118.28408450005811,34.02473497987479</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Insomnia Cookies</name>
-      <description>Restaurant 3</description>
-      <Point>
-        <coordinates>-118.2853449856225,34.024978796299656</coordinates>
-      </Point>
-    </Placemark>
-
-    <!-- Fountains -->
-    <Placemark>
-      <name>Traveller the horse</name>
-      <description>fountains 1</description>
-      <Point>
-        <coordinates>-118.28526109870987,34.02024573113718</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Generations Fountain (exiting leavey)</name>
-      <description>fountains 2</description>
-      <Point>
-        <coordinates>-118.283238,34.022211</coordinates>
-      </Point>
-    </Placemark>
-    <Placemark>
-      <name>Doheny fountain</name>
-      <description>fountains 3</description>
-      <Point>
-        <coordinates>-118.28341902447363,34.020447068158866</coordinates>
-      </Point>
-    </Placemark>
-
-    <!-- Convex Hull  -->
-    <Placemark>
-      <name>Convex Hull Area</name>
-      <Polygon>
-        <outerBoundaryIs>
-          <LinearRing>
-            <coordinates>
-              -118.285920233,34.018857485
-              -118.288885231,34.019451234
-              -118.292579269,34.03308957
-              -118.2840845,34.02473498
-              -118.283238,34.022211
-              -118.283419024,34.020447068
-              -118.283693,34.020007
-              -118.285920233,34.018857485
-            </coordinates>
-          </LinearRing>
-        </outerBoundaryIs>
-      </Polygon>
-    </Placemark>
-
 
   </Document>
 </kml>

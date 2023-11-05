@@ -1,0 +1,67 @@
+CREATE DATABASE SpatialDB;
+
+CREATE TABLE USC_entities (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    description TEXT,
+    coordinates POINT
+);
+
+INSERT INTO usc_entities (name, description, coordinates) 
+VALUES 
+('Home', '1421 West Adams', POINT(-118.29257926863903, 34.0330895700459)),
+('Doheny', 'Library 1', POINT(-118.283693, 34.020007)),
+('Leavey', 'Library 2', POINT(-118.283693, 34.020007)),
+('Science and Engineering', 'Library 3', POINT(-118.28888523078832, 34.01945123387719)),
+('Cinematic Arts', 'Department 1', POINT(-118.2864475558864, 34.02344481782012)),
+('Marshall', 'Department 2', POINT(-118.28592023260921, 34.01885748526797)),
+('Herman Ostro School of Dentistry', 'Department 3', POINT(-118.28627951356212, 34.02388234738049)),
+('Dulce', 'Restaurant 1', POINT(-118.28527978471891, 34.02531244827672)),
+('Starbucks', 'Restaurant 2', POINT(-118.28408450005811, 34.02473497987479)),
+('Insomnia Cookies', 'Restaurant 3', POINT(-118.2853449856225, 34.024978796299656)),
+('Traveller the horse', 'fountains 1', POINT(-118.28526109870987, 34.02024573113718)),
+('Generations Fountain (exiting leavey)', 'fountains 2', POINT(-118.283238, 34.022211)),
+('Doheny fountain', 'fountains 3', POINT(-118.28341902447363, 34.020447068158866));
+
+# Enable PostGIS extension if not already enabled
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+# Compute the convex hull for the points
+SELECT ST_AsText(ST_ConvexHull(ST_Collect(coordinates::geometry))) AS convex_hull_geometry
+FROM usc_entities;
+
+:'
+convex_hull_geometry                                                                                                                                    
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ POLYGON((-118.28592023260921 34.01885748526797,-118.28888523078832 34.01945123387719,-118.29257926863903 34.0330895700459,-118.28408450005811 34.02473497987479,-118.283238 34.022211,-118.28341902447363 34.020447068158866,-118.283693 34.020007,-118.28592023260921 34.01885748526797))
+(1 row)
+'
+
+# Convex Hull as JSON
+CREATE EXTENSION IF NOT EXISTS postgis;
+SELECT ST_AsGeoJSON(ST_ConvexHull(ST_Collect(coordinates::geometry))) AS convex_hull_geometry
+FROM usc_entities;
+
+:'
+{"type":"Polygon","coordinates":[[[-118.285920233,34.018857485],[-118.288885231,34.019451234],[-118.292579269,34.03308957],[-118.2840845,34.02473498],[-118.283238,34.022211],[-118.283419024,34.020447068],[-118.283693,34.020007],[-118.285920233,34.018857485]]]}
+(1 row)
+'
+
+-- Enable PostGIS extension if not already enabled
+CREATE EXTENSION IF NOT EXISTS postgis;
+
+-- Compute the four nearest neighbors
+SELECT name, description, ST_AsText(coordinates::geometry) AS coordinates, ST_Distance(ST_SetSRID(coordinates::geometry,4326)::geography, ST_SetSRID('POINT(-118.29257926863903 34.0330895700459)'::geometry,4326)::geography) AS distance
+FROM usc_entities
+WHERE name <> 'Home' -- Exclude the home location itself
+ORDER BY ST_Distance(ST_SetSRID(coordinates::geometry,4326)::geography, ST_SetSRID('POINT(-118.29257926863903 34.0330895700459)'::geometry,4326)::geography) -- Ordering by distance
+LIMIT 4; -- Retrieve the four nearest neighbors
+
+:'
+name               | description  |                 coordinates                  |   distance    
+----------------------------------+--------------+----------------------------------------------+---------------
+ Dulce                            | Restaurant 1 | POINT(-118.28527978471891 34.02531244827672) |  1094.8222829
+ Insomnia Cookies                 | Restaurant 3 | POINT(-118.2853449856225 34.024978796299656) | 1120.61523462
+ Herman Ostro School of Dentistry | Department 3 | POINT(-118.28627951356212 34.02388234738049) | 1175.38786153
+ Cinematic Arts                   | Department 1 | POINT(-118.2864475558864 34.02344481782012)  | 1210.45718942
+'

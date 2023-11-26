@@ -1,0 +1,119 @@
+[
+    {
+        "id": 1,
+        "name": "1421_west_adams",
+        "loc": [
+            -118.29257926863903,
+            34.0330895700459
+        ],
+        "popularity": 68
+    },
+    {
+        "id": 2,
+        "name": "doheny_library",
+        "loc": [
+            -118.283693,
+            34.020007
+        ],
+        "popularity": 97
+    },
+    {
+        "id": 3,
+        "name": "Leavey_library",
+        "loc": [
+            -118.283258,
+            34.021605
+        ],
+        "popularity": 35
+    },
+    {
+        "id": 4,
+        "name": "Science_and_Engineering",
+        "loc": [
+            -118.28888523078832,
+            34.01945123387719
+        ],
+        "popularity": 89
+    },
+    {
+        "id": 5,
+        "name": "Cinematic_arts_dpt",
+        "loc": [
+            -118.2864475558864,
+            34.02344481782012
+        ],
+        "popularity": 40
+    },
+    {
+        "id": 6,
+        "name": "Marshall_dpt",
+        "loc": [
+            -118.28592023260921,
+            34.01885748526797
+        ],
+        "popularity": 17
+    },
+    {
+        "id": 7,
+        "name": "Herman_Ostro_School_of_Dentistry_dept",
+        "loc": [
+            -118.28627951356212,
+            34.02388234738049
+        ],
+        "popularity": 67
+    },
+    {
+        "id": 8,
+        "name": "Dulce",
+        "loc": [
+            -118.28527978471891,
+            34.02531244827672
+        ],
+        "popularity": 60
+    },
+    {
+        "id": 9,
+        "name": "Starbucks",
+        "loc": [
+            -118.28408450005811,
+            34.02473497987479
+        ],
+        "popularity": 53
+    },
+    {
+        "id": 10,
+        "name": "Insomnia_cookies",
+        "loc": [
+            -118.2853449856225,
+            34.024978796299656
+        ],
+        "popularity": 6
+    },
+    {
+        "id": 11,
+        "name": "Traveller_the_horse",
+        "loc": [
+            -118.28526109870987,
+            34.02024573113718
+        ],
+        "popularity": 62
+    },
+    {
+        "id": 12,
+        "name": "Generations_Fountain",
+        "loc": [
+            -118.283238,
+            34.022211
+        ],
+        "popularity": 59
+    },
+    {
+        "id": 13,
+        "name": "Doheny_fountain",
+        "loc": [
+            -118.28341902447363,
+            34.020447068158866
+        ],
+        "popularity": 34
+    }
+]
